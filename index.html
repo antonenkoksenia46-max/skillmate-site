@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Skillmate – сервіс для пошуку digital-спеціалістів: SMM, таргет, дизайн, відео та контент.">
+  <title>Skillmate – знайди свого digital-фахівця</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;600;700&amp;family=Marck+Script&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#top">Skillmate</a>
+    <button class="burger" id="burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="main-nav">
+      <span class="burger__line"></span><span class="burger__line"></span><span class="burger__line"></span>
+    </button>
+    <nav class="main-nav" id="main-nav" aria-label="Головне меню">
+      <ul>
+        <li><a href="#specialist">Я спеціаліст</a></li>
+        <li><a href="#catalog">Знайти фахівця</a></li>
+        <li><a href="#how">Як це працює</a></li>
+        <li><a class="fav-counter" href="#catalog">Обране: <span id="fav-count">0</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Знайди свого digital-фахівця</h1>
+      <p class="hero__lead">Підбери спеціаліста за послугами, досвідом і форматом роботи.</p>
+
+      <form class="search" id="search-form" action="#catalog" role="search">
+        <label class="visually-hidden" for="query">Послуга або спеціалізація</label>
+        <input class="search__input" type="search" id="query" name="query" placeholder="Послуга або спеціалізація">
+        <button class="btn btn--primary" type="submit">Пошук</button>
+      </form>
+
+      <div class="filters" id="filters" role="group" aria-label="Фільтри">
+        <label class="visually-hidden" for="f-price">Ціна</label>
+        <select class="filter" id="f-price" name="price">
+          <option value="">Ціна</option><option value="lt30">до 30 000 ₴</option><option value="mid">30 000 до 60 000 ₴</option><option value="gt60">від 60 000 ₴</option>
+        </select>
+        <label class="visually-hidden" for="f-exp">Досвід</label>
+        <select class="filter" id="f-exp" name="experience">
+          <option value="">Досвід</option><option value="lt1">до 1 року</option><option value="1to3">від 1 до 3 років</option><option value="gt3">від 3 років</option>
+        </select>
+        <label class="visually-hidden" for="f-city">Місто</label>
+        <select class="filter" id="f-city" name="city">
+          <option value="">Місто</option><option value="kyiv">Київ</option><option value="lviv">Львів</option><option value="other">Інше</option>
+        </select>
+        <label class="visually-hidden" for="f-format">Формат роботи</label>
+        <select class="filter" id="f-format" name="format">
+          <option value="">Формат роботи</option><option value="online">Онлайн</option><option value="offline">Офлайн</option><option value="hybrid">Гібридно</option>
+        </select>
+        <button class="btn btn--ghost" id="reset-btn" type="button">Скинути</button>
+      </div>
+    </section>
+
+    <section class="catalog" id="catalog" aria-labelledby="catalog-title">
+      <h2 id="catalog-title">Фахівці для твоїх ідей</h2>
+      <p class="results-info" id="results-info" aria-live="polite"></p>
+      <p class="empty-msg" id="empty-msg" hidden>За вашим запитом фахівців не знайдено. Змініть пошуковий запит або скиньте фільтри.</p>
+      <div class="cards" id="cards">
+        <article class="card" data-id="ksenia" data-price="30000" data-exp="1to3" data-city="kyiv" data-format="hybrid">
+          <h3 class="card__name">Ксенія</h3>
+          <p>SMM-фахівець · Київ · гібридно</p>
+          <p>Допомагаю брендам розвивати Instagram, TikTok і Facebook – від створення контенту до таргетованої реклами.</p>
+          <p>Зйомка · монтаж · Reels-пак · таргет</p>
+          <p>Базовий пакет – 30 000 ₴</p>
+          <p class="card__note">Інші послуги – за індивідуальною ціною</p>
+          <div class="card__actions">
+            <a class="card__link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <button class="fav-btn" type="button" aria-pressed="false">В обране</button>
+          </div>
+        </article>
+
+        <article class="card" data-id="tetiana" data-price="60000" data-exp="gt3" data-city="lviv" data-format="online">
+          <h3 class="card__name">Тетяна</h3>
+          <p>SMM-фахівець · Львів</p>
+          <p>Комплексне навчання з соцмереж, СММ-спеціаліст</p>
+          <p>7 років досвіду</p>
+          <p>Зйомка · монтаж · Практика на реальному проєкті · таргет</p>
+          <p>Співпраця від 60 000 ₴</p>
+          <p class="card__note">Інші послуги – за індивідуальною ціною</p>
+          <div class="card__actions">
+            <a class="card__link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <button class="fav-btn" type="button" aria-pressed="false">В обране</button>
+          </div>
+        </article>
+
+        <article class="card" data-id="anastasiia" data-price="" data-exp="gt3" data-city="other" data-format="online">
+          <h3 class="card__name">Анастасія Шеремет</h3>
+          <p>Курс SMM з нуля на ринку США · Маркетинг · Таргет</p>
+          <p>Власниця агенції, допоможу Вам зробити $ онлайн, зроблю щоб Ваша сторінка працювала.</p>
+          <p>За співпрацею очікую на повідомлення в Direct</p>
+          <p class="card__note">Інші послуги – за індивідуальною ціною</p>
+          <div class="card__actions">
+            <a class="card__link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <button class="fav-btn" type="button" aria-pressed="false">В обране</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="how" id="how" aria-labelledby="how-title">
+      <h2 id="how-title">Як це працює</h2>
+      <ol class="steps">
+        <li><strong>Знайди.</strong> Введи послугу або обери фільтри.</li>
+        <li><strong>Порівняй.</strong> Подивись послуги, досвід і вартість у картках.</li>
+        <li><strong>Звʼяжись.</strong> Перейди в Instagram спеціаліста та напиши напряму.</li>
+      </ol>
+    </section>
+
+    <aside class="specialist" id="specialist" aria-labelledby="spec-title">
+      <h2 id="spec-title">Ти спеціаліст?</h2>
+      <p class="specialist__lead">Залиш заявку, і ми додамо твій профіль до каталогу Skillmate.</p>
+      <form class="form" id="spec-form" novalidate>
+        <div class="form__row">
+          <label for="f-name">Імʼя та прізвище</label>
+          <input type="text" id="f-name" name="name" placeholder="Наприклад, Ксенія Антоненко" autocomplete="name">
+          <p class="form__error" id="err-name" aria-live="polite"></p>
+        </div>
+        <div class="form__row">
+          <label for="f-email">Електронна пошта</label>
+          <input type="email" id="f-email" name="email" placeholder="name@example.com" autocomplete="email">
+          <p class="form__error" id="err-email" aria-live="polite"></p>
+        </div>
+        <div class="form__row">
+          <label for="f-insta">Instagram</label>
+          <input type="text" id="f-insta" name="instagram" placeholder="@your_account">
+          <p class="form__error" id="err-insta" aria-live="polite"></p>
+        </div>
+        <div class="form__row">
+          <label for="f-spec">Спеціалізація</label>
+          <select id="f-spec" name="spec">
+            <option value="">Оберіть зі списку</option>
+            <option>SMM</option><option>Таргетована реклама</option><option>Дизайн</option><option>Відео та монтаж</option><option>Копірайтинг</option>
+          </select>
+          <p class="form__error" id="err-spec" aria-live="polite"></p>
+        </div>
+        <div class="form__row">
+          <label for="f-msg">Про себе</label>
+          <textarea id="f-msg" name="message" rows="4" maxlength="300" placeholder="Коротко опиши досвід і послуги"></textarea>
+          <p class="form__hint"><span id="msg-count">0</span> / 300</p>
+          <p class="form__error" id="err-msg" aria-live="polite"></p>
+        </div>
+        <div class="form__row form__row--check">
+          <label class="check"><input type="checkbox" id="f-agree" name="agree"> Погоджуюсь на обробку моїх даних</label>
+          <p class="form__error" id="err-agree" aria-live="polite"></p>
+        </div>
+        <button class="btn btn--primary" type="submit">Надіслати заявку</button>
+      </form>
+      <div class="form__success" id="form-success" role="status" hidden></div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Skillmate. Навчальний проєкт.</p>
+  </footer>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
